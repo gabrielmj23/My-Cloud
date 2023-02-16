@@ -8,6 +8,7 @@ module.exports = {
     es6: true
   },
   rules: {
-    "semi": "error"
+    "semi": "error",
+    "no-trailing-spaces": "error"
   }
 };
