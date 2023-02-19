@@ -20,9 +20,9 @@ const upload = multer({
 export const uploadsRouter = Router();
 
 // Upload a file to given path
-uploadsRouter.post('/', upload.single('file'), (req, res) => {
+uploadsRouter.post('/:uploadPath(*)?', upload.single('file'), (req, res) => {
   try {
-    const uploadPath: string = (req as UploadRequest).body.uploadPath;
+    const uploadPath: string = req.params.uploadPath ?? '';
     const filename = (req as UploadRequest).file.originalname;
 
     // Move uploaded file to desired destination
