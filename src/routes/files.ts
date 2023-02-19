@@ -5,7 +5,7 @@ import { readdirSync, statSync } from "node:fs";
 export const filesRouter = Router();
 const STORAGE_DIR = path.join(__dirname.slice(0, -11), '/storage');
 
-filesRouter.get('/:dir(*)?', (req, res): void => {
+filesRouter.get('/:dir(*)?', (req, res) => {
   try {
     // Get all filenames from directory
     const paramDir = req.params.dir ?? '';
