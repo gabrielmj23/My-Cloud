@@ -16,3 +16,9 @@ th {
   flex-direction: row;
   gap: 5em;
 }
+
+.path-display {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}

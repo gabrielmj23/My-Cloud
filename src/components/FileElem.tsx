@@ -1,6 +1,6 @@
 import './FileElem.css';
 import './FilesList.css';
-import { FiFile, FiVideo, FiImage, FiFolder } from "react-icons/fi";
+import { FiFile, FiVideo, FiImage, FiFolder, FiDownload, FiArrowDown } from "react-icons/fi";
 import { IconType } from 'react-icons/lib/esm/iconBase';
 
 // Get react-icons component from file extension
@@ -31,15 +31,28 @@ const readableSize = (size: number): string => {
   return `${size} B`;
 };
 
-export default function FileElem({ fileData }: { fileData: FileInfo }) {
-  console.log(fileData);
+export default function FileElem({ fileData, path, setPath }: { fileData: FileInfo, path: string, setPath: React.Dispatch<React.SetStateAction<string>> }) {
   return (
     <tr className="file-elem files-row">
       <td>{iconFromExt(fileData.extension)({})}</td>
       <td>{fileData.filename}</td>
       { fileData.size > 0 ? (
-        <td>{readableSize(fileData.size)}</td>
-      ) : <td></td> }
+            <td>{readableSize(fileData.size)}</td>
+        ) : <td></td>
+      }
+      <td>
+      { fileData.extension !== '' ? (
+              <a
+                href={`${import.meta.env.VITE_SERVER_URL}/downloads/${path}/${fileData.filename}`}
+                download={fileData.filename}
+              >
+                <FiDownload />
+              </a>
+        ) :   <div onClick={(e) => { setPath(`${path}/${fileData.filename}`); e.preventDefault(); }}>
+                <FiArrowDown />
+              </div>
+      }
+      </td>
     </tr>
   );
 }
