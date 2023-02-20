@@ -1,5 +1,4 @@
 import './FileElem.css';
-import './FilesList.css';
 import { FiFile, FiVideo, FiImage, FiFolder, FiDownload, FiArrowDown } from "react-icons/fi";
 import { IconType } from 'react-icons/lib/esm/iconBase';
 
@@ -33,9 +32,9 @@ const readableSize = (size: number): string => {
 
 export default function FileElem({ fileData, path, setPath }: { fileData: FileInfo, path: string, setPath: React.Dispatch<React.SetStateAction<string>> }) {
   return (
-    <tr className="file-elem files-row">
+    <tr className="file-elem">
       <td>{iconFromExt(fileData.extension)({})}</td>
-      <td>{fileData.filename}</td>
+      <td>{fileData.extension === '' ? '/' : null}{fileData.filename}</td>
       { fileData.size > 0 ? (
             <td>{readableSize(fileData.size)}</td>
         ) : <td></td>
@@ -45,6 +44,7 @@ export default function FileElem({ fileData, path, setPath }: { fileData: FileIn
               <a
                 href={`${import.meta.env.VITE_SERVER_URL}/downloads/${path}/${fileData.filename}`}
                 download={fileData.filename}
+                target='_blank'
               >
                 <FiDownload />
               </a>

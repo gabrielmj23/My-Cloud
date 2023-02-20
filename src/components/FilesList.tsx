@@ -35,14 +35,15 @@ export default function FilesList({ path, setPath }: { path: string, setPath: Re
   // Respond with list of FileElems
   return (
     <div className="files-list">
-      <h2>Files</h2>
+      <h2 style={{marginBottom: '0px'}}>Files</h2>
       <div className="path-display">
-        <p style={{textAlign: 'left', marginLeft: '15px'}}>Current path: {path === '' ? '/' : path}</p>
-        <div style={{placeSelf: 'center'}} onClick={(e) => { exitFolder(); e.preventDefault(); }}>
+        <p>Current path: {path === '' ? '/' : path}</p>
+        <div onClick={(e) => { exitFolder(); e.preventDefault(); }}>
           <FiArrowUp />
           <small>  Up one folder</small>
         </div>
       </div>
+      <hr></hr>
       { files.length === 0 ? (
         <p>No files were found</p>
       ) : (

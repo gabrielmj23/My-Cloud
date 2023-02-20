@@ -6,19 +6,25 @@
   margin-left: auto;
 }
 
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
 th {
   width: 100%;
   text-align: center;
 }
 
-.files-row {
-  display: flex;
-  flex-direction: row;
-  gap: 5em;
+td {
+  padding: 0.5em 2em;
 }
 
 .path-display {
   display: flex;
-  flex-direction: row;
-  gap: 30px;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-bottom: 20px;
 }
