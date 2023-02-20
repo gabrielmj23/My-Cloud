@@ -1,0 +1,11 @@
+.file-elem {
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+  max-width: fit-content;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.file-elem:hover {
+  background-color: #585858;
+}

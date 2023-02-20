@@ -1,14 +1,11 @@
 import './App.css';
+import FilesList from './components/FilesList';
 
 function App() {
   return (
     <div className="App">
-      <h1>Vite + React</h1>
-      <div className="card">
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>My-Cloud</h1>
+      <FilesList />
     </div>
   );
 }
