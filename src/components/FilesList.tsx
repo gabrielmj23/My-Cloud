@@ -3,9 +3,8 @@ import './FilesList.css';
 import FileElem from "./FileElem";
 import { FiArrowUp } from "react-icons/fi";
 
-export default function FilesList() {
+export default function FilesList({ path, setPath }: { path: string, setPath: React.Dispatch<React.SetStateAction<string>> }) {
   const [files, setFiles] = useState<FileInfo[]>([]);
-  const [path, setPath] = useState<string>('');
 
   // Fetch files in this directory on first render
   useEffect(() => {

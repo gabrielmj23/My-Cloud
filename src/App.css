@@ -4,3 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-btn {
+  width: 50%;
+  align-self: center;
+  background-color: rgb(95, 88, 34);
+}
