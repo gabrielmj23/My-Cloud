@@ -28,3 +28,10 @@ td {
   margin-left: 15px;
   margin-bottom: 20px;
 }
+
+.exit-folder-div:hover {
+  background-color: #585858;
+  padding-right: 5px;
+  max-width: fit-content;
+  border-radius: 5px;
+}

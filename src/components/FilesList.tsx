@@ -38,7 +38,7 @@ export default function FilesList({ path, setPath }: { path: string, setPath: Re
       <h2 style={{marginBottom: '0px'}}>Files</h2>
       <div className="path-display">
         <p>Current path: {path === '' ? '/' : path}</p>
-        <div onClick={(e) => { exitFolder(); e.preventDefault(); }}>
+        <div className="exit-folder-div" onClick={(e) => { exitFolder(); e.preventDefault(); }}>
           <FiArrowUp />
           <small>  Up one folder</small>
         </div>
