@@ -49,7 +49,7 @@ export default function FilesList({ path, setPath }: { path: string, setPath: Re
       ) : (
         <table>
           <thead>
-            <tr className="files-row">
+            <tr>
               <th>Type</th>
               <th>File name</th>
               <th>Size</th>

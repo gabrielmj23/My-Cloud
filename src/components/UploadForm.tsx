@@ -1,7 +1,7 @@
 import './UploadForm.css';
 import { useState } from 'react';
 
-type SuccessOptions = 'success' | 'failed' | 'notSubmitted'
+type SuccessOptions = 'success' | 'failed' | 'notSubmitted';
 
 export default function UploadForm({ path }: { path: string }) {
   const [success, setSuccess] = useState<SuccessOptions>('notSubmitted');
@@ -16,6 +16,7 @@ export default function UploadForm({ path }: { path: string }) {
       setSuccess('notSubmitted');
       return;
     }
+    // Add file to form data and post
     const data = new FormData();
     data.append('file', file, file.name);
     const status = await fetch(`${import.meta.env.VITE_SERVER_URL}/uploads${path}/${newFolderName.trim()}`, {

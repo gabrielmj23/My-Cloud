@@ -13,12 +13,29 @@ table {
 }
 
 th {
-  width: 100%;
   text-align: center;
 }
 
 td {
   padding: 0.5em 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  .files-list {
+    width: 1vw;
+    overflow-x: scroll;
+  }
+  thead {
+    display: table-header-group;
+  }
+  th {
+    text-align: center;
+    padding: 0.5em 0.5em;
+  }
+  td {
+    padding: 1em 1em;
+    min-width: max-content;
+  }
 }
 
 .path-display {
