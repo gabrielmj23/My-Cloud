@@ -23,7 +23,7 @@ export const uploadsRouter = Router();
 uploadsRouter.post('/:uploadPath(*)?', upload.single('file'), (req, res) => {
   try {
     const uploadPath: string = req.params.uploadPath ?? '';
-    const filename = (req as UploadRequest).file.originalname;
+    const filename = (req as UploadRequest).file.originalname.split(' ').join('-');
 
     // Move uploaded file to desired destination
     mkdirSync(path.join(__dirname.slice(0, -11), '/storage', uploadPath), { recursive: true });
