@@ -8,8 +8,6 @@
 
 fieldset {
   border: 0;
-  display: flex;
-  flex-direction: column;
   text-align: left;
   gap: 5px;
 }

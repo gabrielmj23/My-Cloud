@@ -1,5 +1,5 @@
 import './FileElem.css';
-import { FiFile, FiVideo, FiImage, FiFolder, FiDownload, FiArrowDown } from "react-icons/fi";
+import { FiFile, FiVideo, FiImage, FiFolder, FiDownload, FiArrowDownRight } from "react-icons/fi";
 import { IconType } from 'react-icons/lib/esm/iconBase';
 
 // Get react-icons component from file extension
@@ -49,7 +49,7 @@ export default function FileElem({ fileData, path, setPath }: { fileData: FileIn
                 <FiDownload />
               </a>
         ) :   <div onClick={(e) => { setPath(`${path}/${fileData.filename}`); e.preventDefault(); }}>
-                <FiArrowDown />
+                <FiArrowDownRight />
               </div>
       }
       </td>

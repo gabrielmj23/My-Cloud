@@ -4,6 +4,7 @@
   padding: 0.25em 0.5em;
   margin-right: auto;
   margin-left: auto;
+  min-width: 300px;
 }
 
 table {
