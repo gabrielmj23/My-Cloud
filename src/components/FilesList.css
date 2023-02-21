@@ -1,0 +1,55 @@
+.files-list {
+  background-color: rgb(43, 52, 52);
+  border-radius: 10px;
+  padding: 0.25em 0.5em;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 300px;
+}
+
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  padding: 0.5em 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  .files-list {
+    width: 1vw;
+    overflow-x: scroll;
+  }
+  thead {
+    display: table-header-group;
+  }
+  th {
+    text-align: center;
+    padding: 0.5em 0.5em;
+  }
+  td {
+    padding: 1em 1em;
+    min-width: max-content;
+  }
+}
+
+.path-display {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.exit-folder-div:hover {
+  background-color: #585858;
+  padding-right: 5px;
+  max-width: fit-content;
+  border-radius: 5px;
+}

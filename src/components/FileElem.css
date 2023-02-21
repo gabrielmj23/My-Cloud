@@ -1,0 +1,6 @@
+.file-elem {
+  text-align: center;
+}
+.file-elem:hover {
+  background-color: #585858;
+}
