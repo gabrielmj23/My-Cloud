@@ -4,7 +4,7 @@ import FileElem from "./FileElem";
 import { FiArrowUp } from "react-icons/fi";
 
 export default function FilesList({ path, setPath }: { path: string, setPath: React.Dispatch<React.SetStateAction<string>> }) {
-  const [files, setFiles] = useState<FileInfo[]>([]);
+  const [files, setFiles] = useState<FileInfo[] | undefined>([]);
 
   // Fetch files in this directory on first render
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function FilesList({ path, setPath }: { path: string, setPath: Re
         </div>
       </div>
       <hr></hr>
-      { files.length === 0 ? (
+      { files === undefined || files.length === 0 ? (
         <p>No files were found</p>
       ) : (
         <table>

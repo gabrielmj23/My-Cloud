@@ -18,7 +18,7 @@ filesRouter.get('/:dir(*)?', (req, res) => {
       const size = statSync(path.join(filesDir, filename)).size;
       return { filename, extension, size };
     });
-    res.json({ files: filesData });
+    res.json({ files: filesData ?? [] });
   } catch (err) {
     res.status(404).json({ error: 'Directory not found' });
   }
